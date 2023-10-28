@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate</title>
+</head>
+<script> 
+
+let input = "";
+
+function addToInput(value) {
+  input += value;
+  document.getElementById("result").value = input;
+}
+
+function clearInput() {
+  input = "";
+  document.getElementById("result").value = input;
+}
+
+function calculateResult() {
+  let result = eval(input);
+  document.getElementById("result").value = result;
+  input = "";
+}
+
+</script>
+<style>
+
+body :hover{
+background-color: blue;
+
+}
+
+
+input[type="button"] {
+  background-color: #f1f1f1;
+  border: none;
+  color: black;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+input[type="button"]:hover {
+  background-color: #ddd;
+}
+
+#result {
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  text-align: right;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f1f1f1;
+}
+</style>
+<body>
+    <form>
+        <input type="text" id="result" disabled>
+        <input type="button" value="1" onclick="addToInput('1')">
+        <input type="button" value="2" onclick="addToInput('2')">
+        <input type="button" value="3" onclick="addToInput('3')">
+        <input type="button" value="+" onclick="addToInput('+')">
+        <br>
+        <input type="button" value="4" onclick="addToInput('4')">
+        <input type="button" value="5" onclick="addToInput('5')">
+        <input type="button" value="6" onclick="addToInput('6')">
+        <input type="button" value="-" onclick="addToInput('-')">
+        <br>
+        <input type="button" value="7" onclick="addToInput('7')">
+        <input type="button" value="8" onclick="addToInput('8')">
+        <input type="button" value="9" onclick="addToInput('9')">
+        <input type="button" value="*" onclick="addToInput('*')">
+        <br>
+        <input type="button" value="0" onclick="addToInput('0')">
+        <input type="button" value="." onclick="addToInput('.')">
+        <input type="button" value="C" onclick="clearInput()">
+        <input type="button" value="/" onclick="addToInput('/')">
+        <br>
+        <input type="button" value="=" onclick="calculateResult()">
+      </form>
+    
+</body>
+</html>
